@@ -134,3 +134,6 @@ date_of_birth
 TODO :
 Créer repository pour tepee-api
 Déployer tepee-api sur Heroku + postgresql
+
+1. Modifier projet redux-auth-demo 
+2. Créer nouveau projet avec composants redux-auth et syle antd

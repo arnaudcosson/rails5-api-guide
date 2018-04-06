@@ -10,37 +10,55 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160723214324) do
+ActiveRecord::Schema.define(version: 20180404104324) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "users", force: :cascade do |t|
-    t.string   "provider",               default: "email", null: false
-    t.string   "uid",                    default: "",      null: false
-    t.string   "encrypted_password",     default: "",      null: false
-    t.string   "reset_password_token"
+  create_table "users", id: :serial, force: :cascade do |t|
+    t.string "provider", default: "email", null: false
+    t.string "uid", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.boolean "allow_password_change"
+    t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,       null: false
+    t.integer "sign_in_count", default: 0, null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.string   "confirmation_token"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.string "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
-    t.string   "unconfirmed_email"
-    t.string   "name"
-    t.string   "nickname"
-    t.string   "image"
-    t.string   "email"
-    t.json     "tokens"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.index ["email"], name: "index_users_on_email", using: :btree
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-    t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true, using: :btree
+    t.string "unconfirmed_email"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
+    t.string "company"
+    t.string "gender"
+    t.string "profile_picture"
+    t.boolean "host", default: false, null: false
+    t.boolean "allow_other_companies", default: false, null: false
+    t.text "place"
+    t.text "about_me"
+    t.text "why_involved"
+    t.float "latitude"
+    t.float "longitude"
+    t.boolean "ambassador"
+    t.string "spoken_languages"
+    t.boolean "verified"
+    t.text "social_networks"
+    t.json "tokens"
+    t.datetime "deleted_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["allow_other_companies"], name: "index_users_on_allow_other_companies"
+    t.index ["deleted_at"], name: "index_users_on_deleted_at"
+    t.index ["email"], name: "index_users_on_email"
+    t.index ["host"], name: "index_users_on_host"
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end
 
 end

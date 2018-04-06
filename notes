@@ -1,0 +1,136 @@
+User Profils
+Visitor: anomymous visitor of the website, as not yet an account on Tepee
+User: has an account on Tepee, can be either a guest only or host
+Host: accept to host Tepers, can receive requests
+Guest: has made a request to and host, want to live Tepee experience
+Company: reporting account for a Company 
+Administrator: Tepee team member
+System: ?
+
+As a Visitor, I want to have information about Tepee, so I can understand what is the value proposition
+As a Visitor, I want to have figures about Tepee, so I can understand how big is the Tepee network
+As a Visitor, I want to know how much it costs, so I can decide if the service worth the price requested
+As a Visitor, I want to have information on Tepee company, so I am confident for my payment
+As a Visitor, I want to receive an invitation, so I can join Tepee
+    The User don't like to set password, Use auto generated password the user can change later
+    https://npm.runkit.com/password-generator-js
+As a Visitor, I want to confirm my invitation, so I can activate my account on Tepee
+    The User want smooth interaction with the platform, "chat like" form is great for UX
+    https://github.com/lucasbassetti/react-simple-chatbot
+
+    Hi, Welcome to Tepee!
+    I'm △, the Tepee bot. What's your first name ?
+    -> {first_name}
+    Thanks for your registration {first_name}, we will complete your profile together
+    ...
+    What is the name of your family name?
+    -> {last_name}
+    What is the name of your company?
+    -> {company}
+    Nice, do you plan to host Tepers or just to be a guest?
+    Card Host and Guest (explain + action - Recommanded) + Card Guest only (explain + action)
+
+    If Host choosen,
+    Where do you live? We will use this to place you on the map
+    -> {address}
+
+    Perfect, now let's talk about money ;) Which plan to you prefer?
+    Card Monthly payment (2€/month, you will be charged the {month of current_date+3months} then every month)
+    Card Yearly payment (20€/year, you save 2 months, you will be charged the {month of current_date+3months} - Recommanded)
+
+    Ok, so just to be sure, here is the information I have about you. A
+    Show summary
+    Is it OK?
+    Button "Yes, Perfect", Button "No"
+
+    If "No"
+    Select field to update
+    Back to the question
+
+    If "Yes" save the profile
+
+    Thanks a lot for your time, you can update your profile at any time in your profile section.
+    You can for example tell who you are and why you are involved in Tepee.
+    Button "See and update my profile"
+As a User, I want to log-on in the platform, so I can access the user features
+As a User, I want to retrieve my password, so I can login if I have lost my password
+As a User, I want to update my profile, so other users can get the right information about me
+
+As a User, I want to search hosts by location, so I can find a host for my next travel
+As a User, I want to search hosts by company, so I can find people from a specific company
+As a User, I want to search hosts by keywords, so I can find people by name or interests
+
+As a User, I want to access other users profiles, so I can select who I will live a Tepee with according to my criteria
+    picture
+    who I am, why I am involved
+    profile information
+    company
+    place
+    the bed I offer
+    previous experiences
+    adjectives
+    social networks
+    time to answer
+    verified
+    last seen
+
+As a Guest, I want to make a request to an host, so I can live the Tepee experience
+As a Guest, I want to have a clear view of the requests I made, so I can organise well my travel
+As a Guest, I want to be able to open my request to the community, so I can increase the possibilities of living Tepee experience
+As a Guest, I want to add a message to the community when I open my request, so I can increase the deasire of a host to "pick" my request
+
+As a Host, I want to be notified of a request I received, so I can anwser fast
+As a Host, I want to be able to choose the dates where I can host, so I keep my freedom
+As a Guest, I want to be notified of the answer of my Host, so I can organise well my travel
+
+As a User, I want to get my history of experiences, so I can remember my good memories and contacts
+
+Test API
+Mettre les bons champs dans la table des Users
+> OK
+Faire un test avec le projet React https://github.com/arnaudcosson/redux-auth/tree/master/test
+> OK
+Tester en particulier la gestion du refresh des tokens et voir combien de temps la session est valide
+> La session est perdu au refresh de la page
+
+
+
+id
+first_name
+last_name
+email
+company
+gender
+profile_picture
+host
+place
+about_me
+why_involved
+
+latitude
+longitude
+ambassador
+last_connection
+created_at
+updated_at
+spoken_languages
+verified
+token
+provider
+uid
+oauth_token
+oauth_expires_at
+deleted_at
+
+country_of_birth
+preferred_language
+job_title
+job_department
+job_country
+login
+date_of_birth
+
+
+TODO :
+Créer repository pour tepee-api
+Déployer tepee-api sur Heroku + postgresql

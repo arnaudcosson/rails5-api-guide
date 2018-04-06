@@ -1,0 +1,27 @@
+Clone this repository
+Rename the repo mv rails5-api-guide/ my_app
+Inside your database.yml rename the database to whatever you want, otherwise it will just be named generic_api_development, generic_api_test, generic_api_production for each environment respectively.
+Rename the top level module inside application.rb to whatever you want otherwise it will be named GenericApi
+$ bundle install
+$ bundle exec rake db:create
+Sorry, you can't use byebug without Readline. To solve this, you need to
+    rebuild Ruby with Readline support. If using Ubuntu, try `sudo apt-get
+    install libreadline-dev` and then reinstall your Ruby.
+rake aborted!
+$ ln -s /usr/local/opt/readline/lib/libreadline.dylib /usr/local/opt/readline/lib/libreadline.6.dylib
+
+If PostgreSQL is not installed in the Mac
+$ brew update
+$ brew install postgres
+
+Run postgres
+$ postgres -D /usr/local/var/postgres
+
+$ bundle exec rake db:create
+Should now work
+
+Run
+$ bundle exec rake db:migrate; RAILS_ENV=test bundle exec rake db:migrate
+Boot up the server with rails s and navigate to localhost:3000 to see your new rails application
+
+$ rails s
